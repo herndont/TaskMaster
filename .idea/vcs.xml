@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/401d3-bitmap-transformer" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/TaskMaster" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/codefellowship" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/data-structures" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/health-tracker-backend" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/healthtracker" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/java-fundamentals" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/java-quotes" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/lectures" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/songr" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/trivia-machine" vcs="Git" />
+    <mapping directory="" vcs="Git" />
   </component>
 </project>

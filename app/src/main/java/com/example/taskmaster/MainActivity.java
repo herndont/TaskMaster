@@ -1,9 +1,11 @@
 package com.example.taskmaster;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.Tasks;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
@@ -38,10 +40,10 @@ public class MainActivity extends AppCompatActivity {
                 int id = item.getItemId();
                 switch(id)
                 {
-//                    case R.id.nav_item_1:
-//                        Intent intent = new Intent(MainActivity.this, FingerActivity.class);
-//                        startActivity(intent);
-//                        break;
+                    case R.id.nav_item_1:
+                        Intent intent = new Intent(MainActivity.this, Tasks.class);
+                        startActivity(intent);
+                        break;
 
                     case R.id.nav_item_2:
                         Toast.makeText(MainActivity.this, "You're already at Home!",Toast.LENGTH_SHORT).show();break;

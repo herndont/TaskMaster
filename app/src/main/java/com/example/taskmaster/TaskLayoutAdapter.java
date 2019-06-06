@@ -4,9 +4,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
+import java.util.ArrayList;
 import java.util.List;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -49,7 +48,10 @@ public class TaskLayoutAdapter extends RecyclerView.Adapter<TaskLayoutAdapter.Ta
             this.notifyItemRemoved(index);
         }
 
-        public void setTasks()
+        public void setTasks(ArrayList<Task> tasks) {
+            this.tasks = tasks;
+            this.notifyDataSetChanged();
+        }
 
         @NonNull
         @Override

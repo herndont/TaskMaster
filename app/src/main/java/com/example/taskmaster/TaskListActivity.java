@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class TaskListActivity extends AppCompatActivity {
@@ -23,6 +25,7 @@ public class TaskListActivity extends AppCompatActivity {
     Button button;
 
     FirebaseFirestore db;
+    FirebaseUser user;
 
 
 
@@ -32,6 +35,8 @@ public class TaskListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_task_list);
 
         db = FirebaseFirestore.getInstance();
+
+        user = FirebaseAuth.getInstance().getCurrentUser();
 
 
 

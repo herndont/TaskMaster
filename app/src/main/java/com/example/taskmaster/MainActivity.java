@@ -11,6 +11,7 @@ import android.widget.Toast;
 import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.tasks.Tasks;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Arrays;
@@ -34,8 +35,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        user = FirebaseAuth.getInstance().getCurrentUser();
+
+        setUI();
+
 //   Navigation Code for the Main page from here down
-        dl = (DrawerLayout) findViewById(R.id.activity_main);
+        dl = findViewById(R.id.activity_main);
         t = new ActionBarDrawerToggle(this, dl, R.string.open, R.string.close);
 
         dl.addDrawerListener(t);
@@ -43,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        nv = (NavigationView) findViewById(R.id.nv);
+        nv = findViewById(R.id.nv);
         nv.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -58,11 +63,6 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "You're already at Home!", Toast.LENGTH_SHORT).show();
                         break;
 
-//                    case R.id.nav_item_3:
-//                        Intent intent2 = new Intent(MainActivity.this, ExerciseDiaryActivity.class);
-//                        startActivity(intent2);
-//                        break;
-//
                     default:
                         return true;
                 }
@@ -70,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-//  Navigation code for the Main page from here up
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -80,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    //  Navigation code for the Main page from here up
 
     public void onLoginClick(View view) {
         // Choose authentication providers

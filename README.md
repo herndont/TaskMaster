@@ -14,8 +14,8 @@
         - Accepted - the assignee has accepted that task
         - Finished - the task is totally complete Write tests making sure a task progresses through its states properly.
             
-************ Screenshots to come for Lab36****************
-************ Explaination of information structuring to come for Lab36****************
+************ Screenshots to come for Lab36 ****************
+************ Explanation of information structuring to come for Lab36 ****************
 
         
 ###Lab37
@@ -27,5 +27,19 @@
         - A user should be able to "Assign" a task to themself.
         - The user assigned to a task should be able to "Accept" that task, and later "Complete that task.
         
-**************** Screenshots to come for Lab 37 (Nothing to show currently) ****************
+**************** Screenshots to come for Lab37 (Nothing to show currently) ****************
 
+
+###Lab38
+
+    Featured Tasks
+        - A user should be able to visit a "My Tasks" screen.
+        - On that screen, they should be able to see all tasks currently assigned to them, and 
+          progress their states.
+            - Those tasks should be displayed in a RecyclerView and should use the same ViewAdapter
+              class as the main activity.
+        - A user shouold be able to filter their "My Tasks" screen into "open" tasks (assigned/accepted)
+          or "all" tasks (accepted/accepted/finished).
+        - Your ViewAdapter should still be well-tested for this use case.
+        
+**************** Screenshots to come for Lab38 *********************

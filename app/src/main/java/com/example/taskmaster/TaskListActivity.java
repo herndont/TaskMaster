@@ -8,9 +8,13 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class TaskListActivity extends AppCompatActivity {
 
@@ -27,6 +31,7 @@ public class TaskListActivity extends AppCompatActivity {
     FirebaseFirestore db;
     FirebaseUser user;
 
+    public List<ProjectTask> projectTasks;
 
 
     @Override
@@ -38,14 +43,13 @@ public class TaskListActivity extends AppCompatActivity {
 
         user = FirebaseAuth.getInstance().getCurrentUser();
 
-
-
-
+        projectTasks = new ArrayList<>();
 
         RecyclerView recyclerView = findViewById(R.id.taskText);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-//        adapter = new TaskLayoutAdapter(Task);
+        adapter = new TaskLayoutAdapter(projectTasks);
+        recyclerView.setAdapter(adapter);
     }
 }

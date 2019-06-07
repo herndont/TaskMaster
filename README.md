@@ -43,3 +43,11 @@
         - Your ViewAdapter should still be well-tested for this use case.
         
 **************** Screenshots to come for Lab38 *********************
+
+
+###Lab39
+
+    Featured Tasks
+        - A user should be able to visit a "My Profile" screen.
+        - On that screen, they should be able to view and edit their username and a bio
+        - On the Task detail screen, tapping on an assigned user should display that user's profile.

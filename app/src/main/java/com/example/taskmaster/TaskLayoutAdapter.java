@@ -4,12 +4,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import java.util.ArrayList;
 import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class TaskLayoutAdapter extends RecyclerView.Adapter<TaskLayoutAdapter.TaskHolder> {
+
 
     public static class TaskHolder extends RecyclerView.ViewHolder {
 
@@ -31,42 +31,46 @@ public class TaskLayoutAdapter extends RecyclerView.Adapter<TaskLayoutAdapter.Ta
 //            this.checkBoxAvailable = itemView.findViewById(R.id.checkBoxAvailable);
         }
 
-        public void setTask(Task task) {
-            this.textTitle.setText(task.getTitle());
-            this.textDescription.setText(task.getDescription());
+        public void setTask(ProjectTask projectTask) {
+            this.textTitle.setText(projectTask.getTitle());
+            this.textDescription.setText(projectTask.getDescription());
         }
         }
 
-        private List<Task> tasks;
+        private List<ProjectTask> projectTasks;
 
-        public TaskLayoutAdapter(List<Task> tasks) {
-            this.tasks = tasks;
+        public TaskLayoutAdapter(List<ProjectTask> projectTasks) {
+            this.projectTasks = projectTasks;
         }
 
         public void removeTask(int index) {
-            this.tasks.remove(index);
+            this.projectTasks.remove(index);
             this.notifyItemRemoved(index);
         }
 
-        public void setTasks(ArrayList<Task> tasks) {
-            this.tasks = tasks;
+        public void setTasks(List<ProjectTask> projectTasks) {
+            this.projectTasks = projectTasks;
             this.notifyDataSetChanged();
         }
 
-        @NonNull
-        @Override
-        public TaskHolder onCreateTaskHolder(@NonNull ViewGroup parent, int viewType) {
+    @NonNull
+    @Override
+    public TaskHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater
+                .from(parent.getContext()).inflate(R.layout.task_view, parent, false);
+        TaskHolder holder = new TaskHolder(view);
 
-            View view = LayoutInflater
-                    .from(parent.getContext()).inflate(R.layout.task_view, parent, false);
-            TaskHolder holder = new TaskHolder(view);
+        return holder;
+    }
 
-            return holder;
-        }
+    @Override
+    public void onBindViewHolder(@NonNull TaskHolder holder, int position) {
+        ProjectTask projectTask = projectTasks.get(position);
+        holder.setTask(projectTask);
+    }
 
-       @Override
-        public void onBindTaskHolder(@NonNull TaskHolder holder, int position) {
-            Task task = tasks.get(position);
-            holder.setTask(task);
-       }
+    @Override
+    public int getItemCount() {
+        return 0;
+    }
     }

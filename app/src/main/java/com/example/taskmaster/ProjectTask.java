@@ -3,14 +3,14 @@ package com.example.taskmaster;
 
 import java.util.ArrayList;
 
-public class Task {
+public class ProjectTask {
     private String title;
     private String description;
     private ArrayList<Integer> state = new ArrayList<>();
 
     private int[] stateList = new int[]{R.string.accepted, R.string.assigned, R.string.available, R.string.complete};
 
-    public Task(String title, int state, String description) {
+    public ProjectTask(String title, int state, String description) {
         this.title = title;
         this.state = setState(state);
     }

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Task {
     private String title;
-    private int description;
+    private String description;
     private ArrayList<Integer> state = new ArrayList<>();
 
     private int[] stateList = new int[]{R.string.accepted, R.string.assigned, R.string.available, R.string.complete};
@@ -23,11 +23,11 @@ public class Task {
         this.title = title;
     }
 
-    public int getDescription() {
+    public String getDescription() {
         return description;
     }
 
-    public void setDescription(int description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 

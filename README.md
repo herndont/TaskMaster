@@ -17,4 +17,15 @@
 ************ Screenshots to come for Lab36****************
 ************ Explaination of information structuring to come for Lab36****************
 
-        Need to basically complete the whole lab
+        
+###Lab37
+
+    Featured Tasks
+        - User should be able to log in.
+            - At a minimum, they should be able to log in with email and password.
+        - Users should be able to see all the Tasks in a cloud database.
+        - A user should be able to "Assign" a task to themself.
+        - The user assigned to a task should be able to "Accept" that task, and later "Complete that task.
+        
+**************** Screenshots to come for Lab 37 (Nothing to show currently) ****************
+

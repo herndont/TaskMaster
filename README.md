@@ -16,3 +16,5 @@
             
 ************ Screenshots to come for Lab36****************
 ************ Explaination of information structuring to come for Lab36****************
+
+        Need to basically complete the whole lab

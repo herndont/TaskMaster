@@ -4,6 +4,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.example.taskmaster.database.ProjectTask;
+
 import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,7 +17,10 @@ public class TaskLayoutAdapter extends RecyclerView.Adapter<TaskLayoutAdapter.Ta
     public static class TaskHolder extends RecyclerView.ViewHolder {
 
         public TextView textTitle;
+        public TextView assignedUser;
         public TextView textDescription;
+        public TextView id;
+        public TextView state;
 //        public CheckBox checkBoxAccepted;
 //        public CheckBox checkBoxComplete;
 //        public CheckBox checkBoxAssigned;

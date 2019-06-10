@@ -96,16 +96,18 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
-        app:layout_constraintVertical_bias="0.107" />
+        app:layout_constraintVertical_bias="0.28" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/taskText"
-        android:layout_width="395dp"
-        android:layout_height="432dp"
+        android:layout_width="396dp"
+        android:layout_height="252dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/taskCreateButton" />
+        app:layout_constraintTop_toBottomOf="@+id/taskCreateButton"
+        app:layout_constraintVertical_bias="0.807" />
 </androidx.constraintlayout.widget.ConstraintLayout>

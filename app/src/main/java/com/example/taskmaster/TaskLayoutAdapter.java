@@ -4,9 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import com.example.taskmaster.database.ProjectTask;
-
 import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -30,6 +28,7 @@ public class TaskLayoutAdapter extends RecyclerView.Adapter<TaskLayoutAdapter.Ta
             super(itemView);
 
             this.textTitle = itemView.findViewById(R.id.text_title);
+            this.assignedUser = itemView.findViewById(R.id.text_assigned_user);
             this.textDescription = itemView.findViewById(R.id.text_description);
 //            this.checkBoxAccepted = itemView.findViewById(R.id.checkBoxAccepted);
 //            this.checkBoxComplete = itemView.findViewById(R.id.checkBoxComplete);
@@ -39,6 +38,7 @@ public class TaskLayoutAdapter extends RecyclerView.Adapter<TaskLayoutAdapter.Ta
 
         public void setTask(ProjectTask projectTask) {
             this.textTitle.setText(projectTask.getTitle());
+            this.textTitle.setText(projectTask.getAssignedUser());
             this.textDescription.setText(projectTask.getDescription());
         }
         }
@@ -77,6 +77,6 @@ public class TaskLayoutAdapter extends RecyclerView.Adapter<TaskLayoutAdapter.Ta
 
     @Override
     public int getItemCount() {
-        return 0;
+        return projectTasks.size();
     }
     }

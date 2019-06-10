@@ -49,6 +49,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginEnd="75dp"
             android:layout_marginBottom="137dp"
+            android:onClick="onLogoutClick"
             android:text="@string/logout" />
 
         <TextView

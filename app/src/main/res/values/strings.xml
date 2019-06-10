@@ -5,6 +5,7 @@
     <string name="close" />
     <string name="task_title">Task Title</string>
     <string name="task_description">Task Description</string>
+    <string name="task_assigned_user">Task Assigned User</string>
     <string name="accepted">Accepted</string>
     <string name="complete">Complete</string>
     <string name="assigned">Assigned</string>

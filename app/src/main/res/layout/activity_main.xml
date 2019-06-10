@@ -14,20 +14,19 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="351dp"
+            android:layout_height="277dp"
             android:layout_below="@+id/text_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="53dp"
-            android:layout_marginLeft="130dp"
-            android:layout_marginTop="106dp"
-            android:layout_marginEnd="51dp"
-            android:layout_marginBottom="412dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="119dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="271dp"
             android:text="@string/headerText"
             android:textAlignment="center"
-            android:textSize="50dp" />
+            android:textSize="50sp" />
 
         <Button
             android:id="@+id/button_login"
@@ -37,8 +36,9 @@
             android:layout_alignParentBottom="true"
             android:layout_marginStart="74dp"
             android:layout_marginEnd="86dp"
-            android:layout_marginBottom="293dp"
+            android:layout_marginBottom="137dp"
             android:layout_toStartOf="@+id/button_logout"
+            android:onClick="onLoginClick"
             android:text="@string/login" />
 
         <Button
@@ -48,7 +48,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_marginEnd="75dp"
-            android:layout_marginBottom="293dp"
+            android:layout_marginBottom="137dp"
             android:text="@string/logout" />
 
         <TextView

@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 int id = item.getItemId();
                 switch (id) {
                     case R.id.nav_item_1:
-                        Intent intent = new Intent(MainActivity.this, Tasks.class);
+                        Intent intent = new Intent(MainActivity.this, TaskListActivity.class);
                         startActivity(intent);
                         break;
 

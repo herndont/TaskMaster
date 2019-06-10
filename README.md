@@ -14,9 +14,9 @@
         - Accepted - the assignee has accepted that task
         - Finished - the task is totally complete Write tests making sure a task progresses through its states properly.
             
-************ Screenshots to come for Lab36 ****************
-************ Explanation of information structuring to come for Lab36 ****************
-
+            
+![main page](/app/src/main/res/drawable/mainLogin.PNG)
+![Task Entry](/app/src/main/res/drawable/taskEntry.PNG)
         
 ###Lab37
 

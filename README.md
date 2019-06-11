@@ -68,3 +68,12 @@
         -Fixed the logout button
         
         -Will continue to play catch up this evening and work on resubmits for the previous labs as well as getting caught up to present spot in labs.
+        
+###Lab42
+
+    Featured Tasks
+        - When a task's state is updated, everyone who has ever interacted with that task (creator or assignee) should get a notificaiton about the update.
+            - The notification should include the task title and the state.
+            - Tapping the notification should take the user to the detail page about that task within the app.
+            
+************ Screenshots of completed work to come in resubmit and database structuring ***********

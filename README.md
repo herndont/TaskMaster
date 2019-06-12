@@ -77,3 +77,13 @@
             - Tapping the notification should take the user to the detail page about that task within the app.
             
 ************ Screenshots of completed work to come in resubmit and database structuring ***********
+
+###Lab43
+
+    Featured Tasks
+        - Any iconography in your app should be well-labeled with a contentDescription.
+        - Use the hint attribute on all editable elements in your app, or labelFor to allow a TextView to serve as a label.
+        - Use the focusable attribute to show that a particular ViewGroup consists of one piece of data.
+        
+************ Screenshots of completed work to come in resubmit and database structuring ***********
+        

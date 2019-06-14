@@ -51,3 +51,20 @@
         - A user should be able to visit a "My Profile" screen.
         - On that screen, they should be able to view and edit their username and a bio
         - On the Task detail screen, tapping on an assigned user should display that user's profile.
+   
+        
+###Lab41
+
+    Featured Tasks
+        - User's device tokens should be saved in their user profile.
+            - If a user logs in from multiple devices, all their device tokens should be saved to their profile.
+        -You should be able to use the notifications composer to send a notofication to all devices with your app on them.
+        
+*************** Screenshots to come for Lab41 user interface and database structure****************
+
+     Progress today:
+        -Fixed the audio pulling issue
+        -Got things back into the database, but will need to continue working on that. 
+        -Fixed the logout button
+        
+        -Will continue to play catch up this evening and work on resubmits for the previous labs as well as getting caught up to present spot in labs.

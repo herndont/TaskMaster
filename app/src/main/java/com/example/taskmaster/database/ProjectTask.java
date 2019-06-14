@@ -49,7 +49,10 @@ public class ProjectTask {
         available = (Boolean) doc.get("available");
         completed = (Boolean) doc.get("completed");
     }
+// Not sure if this constructor is really necessary, but have added for the addTaskClick method in TaskListActivity
+    public ProjectTask() {
 
+    }
 
 
 //    public ArrayList<Integer> setState(int idx) {

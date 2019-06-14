@@ -86,4 +86,9 @@
         - Use the focusable attribute to show that a particular ViewGroup consists of one piece of data.
         
 ************ Screenshots of completed work to come in resubmit and database structuring ***********
-        
+
+
+###Lab44
+
+    Featured Task
+        - Clean up the current code and finish anything that previously wasn't working yet from the other labs that are already completed.        

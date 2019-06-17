@@ -1,10 +1,16 @@
 package com.example.taskmaster;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import com.example.taskmaster.database.ProjectTask;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,26 +30,47 @@ public class TaskLayoutAdapter extends RecyclerView.Adapter<TaskLayoutAdapter.Ta
 //        public CheckBox checkBoxAssigned;
 //        public CheckBox checkBoxAvailable;
 
+        FirebaseFirestore db;
+
         public TaskHolder(@NonNull View itemView) {
             super(itemView);
 
-            this.textTitle = itemView.findViewById(R.id.text_title);
-            this.assignedUser = itemView.findViewById(R.id.text_assigned_user);
-            this.textDescription = itemView.findViewById(R.id.text_description);
+            this.textTitle = itemView.findViewById(R.id.taskTitle);
+            this.assignedUser = itemView.findViewById(R.id.taskAssignedUser);
+            this.textDescription = itemView.findViewById(R.id.taskDescription);
 //            this.checkBoxAccepted = itemView.findViewById(R.id.checkBoxAccepted);
 //            this.checkBoxComplete = itemView.findViewById(R.id.checkBoxComplete);
 //            this.checkBoxAssigned = itemView.findViewById(R.id.checkBoxAssigned);
 //            this.checkBoxAvailable = itemView.findViewById(R.id.checkBoxAvailable);
         }
 
-        public void setTask(ProjectTask projectTask) {
+        public void setTask(final ProjectTask projectTask) {
             this.textTitle.setText(projectTask.getTitle());
             this.textTitle.setText(projectTask.getAssignedUser());
             this.textDescription.setText(projectTask.getDescription());
+
+            final String id = projectTask.getId();
+            this.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Context context = itemView.getContext();
+                    Intent intent = new Intent(context, TaskListActivity.class);
+                    intent.putExtra("projectTaskId", projectTask.getId());
+                    itemView.getContext().startActivity(intent);
+
+                    db.collection("projectTasks").document(id).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                        @Override
+                        public void onSuccess(DocumentSnapshot documentSnapshot) {
+                            ProjectTask singleTask = documentSnapshot.toObject(ProjectTask.class);
+                        }
+                    });
+                }
+            });
         }
         }
 
         private List<ProjectTask> projectTasks;
+
 
         public TaskLayoutAdapter(List<ProjectTask> projectTasks) {
             this.projectTasks = projectTasks;

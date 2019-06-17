@@ -4,11 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.taskmaster.database.ProjectTask;
@@ -24,15 +24,16 @@ import java.util.List;
 
 public class TaskListActivity extends AppCompatActivity {
 
+
     RecyclerView.LayoutManager layoutManager;
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
 
-    TextView TaskTitle;
-    TextView TaskDescription;
-//    CheckBox
+    TextView title;
+    TextView assignedUser;
+    TextView description;
 
-    Button button;
+//    CheckBox
 
     FirebaseFirestore db;
     FirebaseUser user;
@@ -59,12 +60,20 @@ public class TaskListActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
     }
 
-    public void addTaskClick(View view) {
-        ProjectTask projectTask1 = new ProjectTask();
-        projectTask1.setTitle("ProjectTask One");
-        projectTask1.setDescription("ProjectTask Description");
 
-        db.collection("projectTasks").add(projectTask1)
+    public void addTaskClick(View view) {
+        title = findViewById(R.id.taskTitle);
+        assignedUser = findViewById(R.id.taskAssignedUser);
+        description = findViewById(R.id.taskDescription);
+
+
+
+        ProjectTask projectTask = new ProjectTask();
+        projectTask.setTitle(title.getText().toString());
+        projectTask.setAssignedUser(assignedUser.getText().toString());
+        projectTask.setDescription(description.getText().toString());
+
+        db.collection("projectTasks").add(projectTask)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
@@ -77,6 +86,15 @@ public class TaskListActivity extends AppCompatActivity {
                         Log.d("Task", "Task not added", e);
                     }
                 });
+
+        Intent intent = getIntent();
+        finish();
+        startActivity(intent);
+    }
+
+    public void onHomeButtonClick(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
 }

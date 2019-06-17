@@ -3,21 +3,26 @@ package com.example.taskmaster.database;
 
 import com.example.taskmaster.R;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.Exclude;
+import com.google.firebase.firestore.IgnoreExtraProperties;
 
-import java.util.ArrayList;
-
+@IgnoreExtraProperties
 public class ProjectTask {
     private String title;
     private String assignedUser;
     private String description;
     private String userId;
-    private String id;
     private Boolean accepted;
     private Boolean assigned;
     private Boolean available;
     private Boolean completed;
 
+    @Exclude
+    private String id;
 
+    public ProjectTask() {
+
+    }
 //    private ArrayList<Integer> state = new ArrayList<>();
 
 //    private int[] stateList = new int[]{R.string.accepted, R.string.assigned, R.string.available, R.string.complete};
@@ -26,33 +31,37 @@ public class ProjectTask {
         this.title = title;
         this.assignedUser = assignedUser;
         this.description = description;
-    }
-
-
-    public ProjectTask(String title, String assignedUser, String description, String id, String userId, int state) {
-        this.title = title;
-        this.assignedUser = assignedUser;
-        this.description = description;
-        this.id = id;
+//        this.id = id;
         this.userId = userId;
+        this.accepted = accepted;
+        this.assigned = assigned;
+        this.available = available;
+        this.completed = completed;
+    }
+
+
+//    public ProjectTask(String title, String assignedUser, String description, String id, String userId, int state) {
+//        this.title = title;
+//        this.assignedUser = assignedUser;
+//        this.description = description;
+//        this.id = id;
+//        this.userId = userId;
 //        this.state = setState(state);
-    }
+//    }
 
-    public ProjectTask(DocumentSnapshot doc) {
-        title = (String) doc.get("title");
-        assignedUser = (String) doc.get("assignedPerson");
-        description = (String) doc.get("description");
-        id = (String) doc.get("id");
-        userId = (String) doc.get("userId");
-        accepted = (Boolean) doc.get("accepted");
-        assigned = (Boolean) doc.get("assegned");
-        available = (Boolean) doc.get("available");
-        completed = (Boolean) doc.get("completed");
-    }
+//    public ProjectTask(DocumentSnapshot doc) {
+//        title = (String) doc.get("title");
+//        assignedUser = (String) doc.get("assignedPerson");
+//        description = (String) doc.get("description");
+//        id = (String) doc.get("id");
+//        userId = (String) doc.get("userId");
+//        accepted = (Boolean) doc.get("accepted");
+//        assigned = (Boolean) doc.get("assigned");
+//        available = (Boolean) doc.get("available");
+//        completed = (Boolean) doc.get("completed");
+//    }
 // Not sure if this constructor is really necessary, but have added for the addTaskClick method in TaskListActivity
-    public ProjectTask() {
 
-    }
 
 
 //    public ArrayList<Integer> setState(int idx) {
@@ -96,12 +105,15 @@ public class ProjectTask {
         this.userId = userId;
     }
 
+    @Exclude
     public String getId() {
         return id;
     }
 
-    public void setId(String id) {
+    @Exclude
+    public ProjectTask setId(String id) {
         this.id = id;
+        return this;
     }
 
     public Boolean getAccepted() {
